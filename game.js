@@ -45,12 +45,15 @@ function updateCounts () {
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   var dotsArr = document.getElementsByClassName('board')[0].children;
   for (let i = 0; i < dotsArr.length; i++) {
-    if(dotsArr[i].classList.contains('blue')){
-      totals.blue += 1;
-    } else if(dotsArr[i].classList.contains('green')) {
-      totals.green += 1;
-    } else if(dotsArr[i].classList.contains('invisible')){
-      totals.invisible += 1;
+    // put calss of a div in an array
+    var classArr = dotsArr[i].classList;
+    // count the last class in a class array
+    if(classArr[classArr.length - 1] === 'blue'){
+      totals.blue ++;
+    } else if(classArr[classArr.length - 1] === 'green') {
+      totals.green ++;
+    } else if(classArr[classArr.length - 1] === 'invisible'){
+      totals.invisible ++;
     }
   }
   // Once you've done the counting, this function will update the display
@@ -61,4 +64,8 @@ function displayTotals (totals) {
   for (var key in totals) {
     document.getElementById(key + '-total').innerHTML = totals[key]
   }
+}
+
+init = () => {
+
 }
