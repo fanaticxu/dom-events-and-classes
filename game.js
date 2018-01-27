@@ -45,14 +45,15 @@ function updateCounts () {
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   var dotsArr = document.getElementsByClassName('board')[0].children;
   for (let i = 0; i < dotsArr.length; i++) {
-    // put calss of a div in an array
+    // put class of a div in an array
     var classArr = dotsArr[i].classList;
+    var lastClassItem = classArr[classArr.length - 1];
     // count the last class in a class array
-    if(classArr[classArr.length - 1] === 'blue'){
+    if(lastClassItem === 'blue'){
       totals.blue ++;
-    } else if(classArr[classArr.length - 1] === 'green') {
+    } else if(lastClassItem === 'green') {
       totals.green ++;
-    } else if(classArr[classArr.length - 1] === 'invisible'){
+    } else if(lastClassItem === 'invisible'){
       totals.invisible ++;
     }
   }
