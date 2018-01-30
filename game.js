@@ -49,12 +49,13 @@ function updateCounts () {
     var classArr = dotsArr[i].classList;
     var lastClassItem = classArr[classArr.length - 1];
     // count the last class in a class array
-    if(lastClassItem === 'blue'){
+    // should check invisible first
+    if(classArr.contains('invisible')) {
+      totals.invisible ++;
+    } else if(lastClassItem === 'blue'){
       totals.blue ++;
     } else if(lastClassItem === 'green') {
       totals.green ++;
-    } else if(lastClassItem === 'invisible'){
-      totals.invisible ++;
     }
   }
   // Once you've done the counting, this function will update the display
